@@ -117,7 +117,7 @@ The model learned to:
 
 ## Try It Yourself
 
-**Colab notebook:** [Open in Colab →](https://colab.research.google.com/drive/1yEVvyttO8KK2q1TfTcBSvadw8ke5LkLY#scrollTo=vLM3cO9wGrZr)
+**Colab notebook:** https://colab.research.google.com/drive/1yEVvyttO8KK2q1TfTcBSvadw8ke5LkLY#scrollTo=vLM3cO9wGrZr
 
 **Live environment:**
 ```python
