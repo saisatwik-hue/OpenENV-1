@@ -130,10 +130,18 @@ print(f"Score: {grade['episode_score']} | Grade: {grade['grade_letter']}")
 
 ---
 
-## LLM training
+## 📈 Training Results
 
-**Live Demo:** **Live Demo:** https://saisatwik1234567-email-triage-and-response-environment.hf.space
-you can see graphs and all the information about training here
+![Reward Curve](training_results.png)
+
+| | Before Training | After Training |
+|---|---|---|
+| Average Score | 0.682 | 0.710 |
+| P0 Escalation | ❌ Archives | ✅ Escalates |
+| Spam Detection | ❌ Responds | ✅ Archives |
+| Pass Threshold | ❌ Fails | ✅ Passes |
+
+📓 [Open Training Notebook](https://colab.research.google.com/drive/1yEVvyttO8KK2q1TfTcBSvadw8ke5LkLY)
 
 ## 🧪 Test Results
 
