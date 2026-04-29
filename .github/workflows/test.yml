@@ -12,21 +12,21 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python 3.11
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          pip install pytest httpx pydantic fastapi uvicorn PyYAML python-multipart
           pip install -r requirements.txt
 
       - name: Run tests
-        run: |
-          pytest tests/ -v --tb=short
+        run: pytest tests/ -v --tb=short
 
       - name: Check all Python files compile
         run: |
@@ -35,4 +35,4 @@ jobs:
           python -m py_compile app/models.py
           python -m py_compile inference.py
           python -m py_compile server/app.py
-          echo "All files compile successfully"
+          echo "✅ All files compile"
