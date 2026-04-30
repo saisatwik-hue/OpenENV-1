@@ -22,20 +22,13 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest httpx pydantic fastapi "uvicorn[standard]" PyYAML python-multipart websockets
+          pip install pytest httpx pydantic "fastapi[all]" "uvicorn[standard]" PyYAML python-multipart websockets
           pip install -r requirements.txt
 
-      - name: Start server in background
-        run: |
-          python -m uvicorn app.main:app --host 127.0.0.1 --port 7860 &
-          echo "Waiting for server to start..."
-          sleep 8
-          curl -f http://127.0.0.1:7860/health?fmt=json && echo "✅ Server is up" || echo "⚠️ Server not responding"
-
-      - name: Run tests
+      - name: Run all 17 tests
         run: pytest tests/ -v --tb=short
 
-      - name: Check all Python files compile
+      - name: Verify all Python files compile
         run: |
           python -m py_compile app/main.py
           python -m py_compile app/environment.py
